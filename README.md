@@ -23,8 +23,9 @@ Once Jekyll is installed, follow these steps:
 1. Clone your forked repository: Clone the forked repository to your local machine using the following command: `git clone https://github.com/your-username/portfolio-site.git`
 2. Navigate to the project directory: `cd portfolio-site`
 3. Install dependencies: `bundle install`
-4. Start the Jekyll server: `bundle exec jekyll serve`
-5. Open your browser and go to `http://localhost:4000` to view the site.
+4. Build the jekyll site: `bundle exec jekyll build`
+5. Start the Jekyll server: `bundle exec jekyll serve`
+6. Open your browser and go to `http://localhost:4000` to view the site.
 
 ## Usage
 

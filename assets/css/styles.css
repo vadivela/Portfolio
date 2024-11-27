@@ -285,6 +285,11 @@ header {
 }
 .read-more{
     color: var(--secondary-text-color);
+    text-decoration: none;
+}
+.read-more:hover{
+    text-decoration: underline;
+    color: var(--contrast);
 }
 .worklist{
     margin-top: 35px;
@@ -303,12 +308,12 @@ header {
 #see-more-btn{
     border-style: none;
     border-radius: 8px;
-    padding: 10px 15px;
-    background-color: #b0f3d4;
+    padding: 10px 15px;color: white;
+    background-color: var(--secondary-text-color);
     margin-top: 25px;
 }
 #see-more-btn:hover{
-    background-color: var(--secondary-text-color);
+    background-color: var(--contrast);
 }
 
 
