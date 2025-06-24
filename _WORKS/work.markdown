@@ -1,48 +1,54 @@
 ---
-title: Color Cube Sorting Robotic Arm
-description: Developed a 4-DOF robotic arm system capable of detecting and sorting colored cubes on a conveyor using real-time sensors and multiprocessing control logic. Designed for efficient, autonomous material handling in structured environments.
+title: Proactive Human-Manipulator Collision Avoidance
+description: Developed a real-time, predictive motion planning system for the UR16e robotic arm using 3D human pose estimation, motion forecasting, APF-based safety evaluation, and GPU-accelerated A-RRT* trajectory replanning in a ROS 2-based digital twin.
 
-imgurl: work3.gif
+imgurl: work.gif
 ---
 
 # **Project Overview**
-This project showcases an autonomous 4-DOF robotic arm designed to identify and sort colored cubes on a conveyor belt. The system uses a color sensor and an ultrasonic sensor to detect object attributes in real time, allowing the robot to accurately position and drop the cubes into designated bins based on color.
+This project implements a human-aware motion planning framework for the UR16e robotic manipulator to operate safely in dynamic, shared environments. By combining real-time 3D pose tracking, neural motion prediction, and adaptive trajectory generation, the robot proactively avoids collisions with human operators—anticipating their future movements and adjusting its path before conflict occurs.
+
+The system is fully integrated in a ROS 2 digital twin, simulating both the robot and human in Gazebo and RViz with live replanning using GPU-accelerated algorithms.
 
 ---
 
-# **Key Features**
-- **Real-Time Color Detection**:  
-  Used a color sensor to classify cube colors (e.g., red, blue, green) while moving on a conveyor.
+# **Key Components**
 
-- **Distance-Based Triggering**:  
-  An ultrasonic sensor measured proximity, ensuring the arm activated only when an object was within range.
+- **3D Human Pose Estimation**:  
+  Extracted real-time skeletal joints using the Orbbec Femto Bolt depth camera and MediaPipe.
 
-- **Efficient Sorting Algorithm**:  
-  Implemented multiprocessing on a Parallax Propeller Board to simultaneously read color and distance inputs, ensuring rapid and synchronized sorting actions.
+- **Motion Forecasting (LSTM Model)**:  
+  Predicted short-term human motion using a Bi-LSTM neural network trained on normalized joint sequences.
+
+- **Artificial Potential Field (APF) Evaluation**:  
+  Quantified collision risk between predicted human skeleton and robot links using a capsule model.
+
+- **Adaptive RRT***:  
+  Implemented a GPU-accelerated A-RRT* planner using CuPy for rapid trajectory generation in response to predicted motion.
+
+- **Digital Twin Environment**:  
+  Simulated the UR16e robot and human in Gazebo, with RViz visualizations of current and future human joint positions.
+
+- **Real-Time Control Execution**:  
+  Sent planned joint trajectories to the UR16e via ROS 2 controllers, with dynamic halting and replanning logic based on APF thresholds.
 
 ---
 
-# **Technical Breakdown**
+# **Performance Highlights**
 
-### 1. **Hardware Design**
-- Built a 4-DOF robotic arm with a custom gripper for object pick-and-drop.
-- Integrated the arm with a conveyor system for continuous sorting.
-
-### 2. **Sensor Integration**
-- Calibrated a TCS34725 color sensor for reliable cube color detection.
-- Positioned an ultrasonic sensor to detect when a cube enters the pickup zone.
-
-### 3. **Multiprocessing Control**
-- Utilized Parallax Propeller’s multiple cores to handle color reading and arm control in parallel.
-- Ensured minimal latency between object detection and sorting actions.
+- Achieved real-time replanning speeds of **0.6–2.0 seconds**
+- Maintained minimum robot-human clearance of **≥ 275 mm**
+- Triggered safe trajectory replans in **100% of unsafe scenarios**
+- End-to-end latency (prediction to actuation) under **200 ms**
 
 ---
 
 # **Applications**
-- **Smart Warehousing**: Automates small-scale item sorting in controlled logistics.
-- **STEM Education**: Demonstrates concepts of sensor fusion, robotic kinematics, and embedded logic.
-- **Prototyping**: Foundation for scalable conveyor-based automation systems.
+
+- **Collaborative Robotics**: Enhancing safety in shared industrial workspaces.
+- **Smart Manufacturing**: Human-in-the-loop automation with predictive motion planning.
+- **Research & Prototyping**: Testing safe HRI strategies in digital twin environments before physical deployment.
 
 ---
 
-[🔗 View Source Code on GitHub](https://github.com/vadivela/Color-Cube-Sorting-Robotic-Arm)
+[🔗 View Full Code on GitHub](https://github.com/vadivela/Proactive-Human-Manipulator-collision-avoidance-through-motion-prediction-and-ROS)
