@@ -2,7 +2,7 @@
 title: Teleoperated 4-DOF Robotic Arm
 description: Built a fully functional 4-DOF robotic arm controlled via a puppet model with potentiometers. Enabled intuitive teleoperation, pose recording, and real-time mirror functionality—simulating industrial pick-and-place applications.
 
-imgurl: work2.jpg
+imgurl: work2.gif
 ---
 
 # **Project Overview**
