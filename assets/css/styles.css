@@ -16,25 +16,22 @@ body {
 
 /* Color Variables */
 :root {
-    --gradient: linear-gradient(104.05deg, rgba(0, 255, 157, 0.6) 0%, rgba(31, 236, 164, 0.2) 30%, rgba(90, 204, 151, 0.2) 60%, rgba(230, 251, 242, 0.2) 100%);
-    --contrast: #069666;
-    --secondary-text-color: #60DAA8;
-    --menu-background: #1e1e1e;
+    --gradient: linear-gradient(135deg, #9381FF 0%, #A3C4F3 100%);
+    --contrast: #6A5ACD; /* Slate Violet */
+    --secondary-text-color: #9381FF; /* Soft Lavender */
+    --menu-background: #1B1F3A; /* Deep Navy */
 }
 
 /* Utility Wrappers */
 .wrapper1 {
     padding: 4rem 6rem;
 }
-
 .wrapper2 {
     padding: 2rem 6rem 4rem;
 }
-
 .herowrapper {
     padding: 10rem 6rem 3rem;
 }
-
 .workwrapper,
 .defaultpage {
     margin: 9rem auto 5rem;
@@ -48,18 +45,15 @@ body {
     color: #252525;
     line-height: 1.4;
 }
-
 .txt2 {
     font-size: 2rem;
     font-weight: 500;
     color: #000;
 }
-
 .txt4, .txt5, .txt6 {
     font-size: 1.1rem;
     color: #111;
 }
-
 .txt6 {
     font-weight: 500;
 }
@@ -73,23 +67,19 @@ header {
     right: 6rem;
     top: 0;
 }
-
 .menu-list {
     list-style: none;
     display: flex;
     gap: 2rem;
 }
-
 .menu-links {
     color: #000;
     transition: 0.3s;
 }
-
 .menu-links:hover {
     transform: scale(1.1);
     font-weight: 500;
 }
-
 .resume-btn {
     background-color: #000;
     color: #fff;
@@ -98,7 +88,6 @@ header {
     border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .resume-btn:hover {
     background-color: var(--contrast);
     transform: scale(1.05);
@@ -108,12 +97,10 @@ header {
 .hero-content {
     background: var(--gradient);
 }
-
 .name {
     color: var(--contrast);
     font-weight: 600;
 }
-
 .see-more:hover {
     transform: translateY(10px);
     transition: transform 0.3s ease;
@@ -125,35 +112,29 @@ header {
     flex-wrap: wrap;
     gap: 2rem;
 }
-
 .about-col-1 {
     flex: 1;
     max-width: 35%;
 }
-
 .about-col-1 img {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
 .about-col-2 {
     flex: 2;
 }
-
 .tab-titles {
     display: flex;
     gap: 2rem;
     margin: 1.5rem 0;
 }
-
 .tab-links {
     font-size: 1.125rem;
     font-weight: 500;
     position: relative;
     cursor: pointer;
 }
-
 .tab-links::after {
     content: '';
     height: 3px;
@@ -164,29 +145,23 @@ header {
     left: 0;
     transition: width 0.3s;
 }
-
 .tab-links.active-link::after {
     width: 50%;
 }
-
 .tab-contents {
     display: none;
 }
-
 .tab-contents.active-tab {
     display: block;
 }
-
 .tab-contents ul {
     list-style: none;
     padding-left: 0;
 }
-
 .tab-contents ul li {
     margin: 0.75rem 0;
     font-size: 1rem;
 }
-
 .tab-contents ul li span {
     color: var(--secondary-text-color);
     font-weight: 500;
@@ -196,32 +171,26 @@ header {
 .worklist {
     margin-top: 2.5rem;
 }
-
 .workcard {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
     padding: 1.5rem;
     border-radius: 12px;
     transition: transform 0.3s ease;
 }
-
 .workcard:hover {
     transform: scale(1.01);
 }
-
 .work-card-links {
     color: #000;
 }
-
 .read-more {
     color: var(--secondary-text-color);
     transition: color 0.3s;
 }
-
 .read-more:hover {
     color: var(--contrast);
     text-decoration: underline;
 }
-
 .workmdimg {
     width: 100%;
     height: 400px;
@@ -235,11 +204,9 @@ header {
     background: var(--gradient);
     padding: 2rem 4rem;
 }
-
 .footer-lnk {
     color: inherit;
 }
-
 .footer-lnk:hover {
     text-decoration: underline;
 }
@@ -250,7 +217,6 @@ header {
         margin: 9rem 3rem 5rem;
     }
 }
-
 @media screen and (max-width: 768px) {
     .herowrapper, .wrapper1, .wrapper2 {
         padding: 3rem;
@@ -265,7 +231,6 @@ header {
         max-width: 100%;
     }
 }
-
 @media screen and (max-width: 500px) {
     .herowrapper {
         padding: 2rem;
